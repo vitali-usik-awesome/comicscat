@@ -20,6 +20,6 @@ public class ComicsDAO {
 
     @SuppressWarnings("unchecked")
     public List<Comics> listComics() {
-        return sessionFactory.getCurrentSession().createQuery("FROM Comics WHERE comics_status = 'pub' ORDER BY comics_date_added DESC").setMaxResults(10).list();
+        return sessionFactory.getCurrentSession().createQuery("FROM Comics WHERE comics_status = 'pub' ORDER BY comics_date_added DESC").setFirstResult(1).setMaxResults(2).list();
     }
 }
