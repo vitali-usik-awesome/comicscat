@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* reset by medic */
+* {padding:0; margin:0;}
+img {border:0 none;}
+div {display:block; position:relative;}
+ul {list-style: none;}
+.hidden {display: none;}
+.clr:after {display:none; position:relative; content:' '; color:transparent; font-size:0; line-height:0; clear:both;}
+
+body {background: #fff;}
+
+/* wrapper */
+.wrapper {max-width: 1200px; margin: 0 auto;}
+
+/* comics_wrapper */
+.comics_item {margin-top: 20px;}
+.comics_item:nth-child(even) {background-color: #98FB98;}
+
+.comics_desc_wrapper {overflow: hidden;}
+.comics_img {display: block; position: relative; float: left; width: 150px;}
+.comics_img img {margin: 0 20px;}
+.comics_desc {display: block; position: relative; float: left; width: 1050px;}
