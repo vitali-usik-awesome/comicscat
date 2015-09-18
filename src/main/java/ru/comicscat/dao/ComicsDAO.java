@@ -28,4 +28,12 @@ public class ComicsDAO {
         Query q = sessionFactory.getCurrentSession().createQuery("SELECT COUNT(c) FROM Comics c WHERE comics_status = 'pub'");
         return (Long) q.uniqueResult();
     }
+
+    public Comics getComics(String link) {
+        Comics comics = null;
+        Query q = sessionFactory.getCurrentSession().createQuery("FROM Comics WHERE (comics_link = :link)");
+        q.setString("link", link);
+        comics = (Comics) q.uniqueResult();
+        return comics;
+    }
 }

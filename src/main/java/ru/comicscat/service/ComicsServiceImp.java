@@ -35,4 +35,9 @@ public class ComicsServiceImp implements ComicsService {
         int fristResult = (COMICS_PER_PAGE * page) - COMICS_PER_PAGE;
         return comicsDao.listComics(fristResult, COMICS_PER_PAGE);
     }
+
+    @Transactional
+    public Comics getComics(String link) {
+        return comicsDao.getComics(link);
+    }
 }

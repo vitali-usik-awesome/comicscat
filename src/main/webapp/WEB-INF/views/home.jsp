@@ -10,12 +10,12 @@
     </head>
     <body>
         <div class="wrapper">
-        <h1>Hello, World! Comicscat is here!</h1>
+        <h1><a href="${pageContext.request.contextPath}">Hello, World! Comicscat is here!</a></h1>
         <c:if test="${!empty comicsList}">
             <c:forEach items="${comicsList}" var="pop">
                 <div class="comics_item">
-                    <h3>${pop.comics_title }</h3>
-                    <h4>${pop.comics_title_origin }</h4>
+                    <h3><a href="${pageContext.request.contextPath}/comics/${pop.comics_link}">${pop.comics_title }</a></h3>
+                    <h4><a href="${pageContext.request.contextPath}/comics/${pop.comics_link}">${pop.comics_title_origin }</a></h4>
                     <div class="comics_desc_wrapper">
                         <div class="comics_img">
                             <img src="${pop.comics_cover_url }" height="150px" />

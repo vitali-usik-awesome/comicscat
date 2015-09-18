@@ -12,5 +12,5 @@ public interface ComicsService {
     final static Integer COMICS_PER_PAGE = 2;
     public List<Comics> listComics(int page);
     public Long getPages();
-    //public Object listComics(String page);
+    public Comics getComics(String link);
 }
