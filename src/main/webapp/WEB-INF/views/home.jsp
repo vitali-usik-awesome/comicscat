@@ -32,7 +32,6 @@
                         </div>
                     </div>
                     <p>${pop.comics_description}</p>
-                    <!-- <p>${pop.comics_videos }</p> -->
                     <p></p>
                     
                 </div>
