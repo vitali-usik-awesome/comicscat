@@ -33,7 +33,7 @@ public class HomeControllerTest {
     @Test
     public void shouldDisplayComics() {
         List<Comics> expectedComics = Arrays.asList(new Comics(), new Comics());
-        when(comicsService.listComics()).thenReturn(expectedComics);
+        when(comicsService.listComics(0)).thenReturn(expectedComics);
         HashMap<String, Object> model = new HashMap<String, Object>();
         String viewName = controller.homePage(model);
         assertEquals("home", viewName);

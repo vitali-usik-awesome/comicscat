@@ -38,6 +38,11 @@
                 </div>
             </c:forEach>
         </c:if>
+        <c:if test="${!empty pages }">
+            <c:forEach var="page" begin="1" end="${pages }">
+                <a href="${pageContext.request.contextPath}/page=${page}">${page}</a>
+            </c:forEach>
+        </c:if>
     </div>
     </body>
 </html>
