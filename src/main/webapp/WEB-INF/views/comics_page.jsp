@@ -22,7 +22,7 @@
                         <div class="comics_desc">
                             <p><b>Писатель:</b>
                             <c:forEach items="${comics.writers }" var="opo">
-                                ${opo.writer_name }
+                                <a href="${pageContext.request.contextPath}/writer/${opo.writer_link}">${opo.writer_name }</a>
                             </c:forEach>
                             </p>
                             <p><b>Художник:</b> ${comics.comics_painter }</p>

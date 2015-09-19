@@ -43,14 +43,8 @@ public class Writer {
     @Column(name = "writer_nationality")
     private String writer_nationality;
 
-//    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinTable(name = "comics_writer", catalog = "comicscat", joinColumns = { 
-//            @JoinColumn(name = "comics_id", nullable = false, updatable = false) }, 
-//            inverseJoinColumns = { @JoinColumn(name = "writer_id", 
-//                    nullable = false, updatable = false) })
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "writers")
     private Set<Comics> listComics = new HashSet<Comics>(0);
-
 
     /**
      * @return the writer_id

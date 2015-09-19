@@ -16,10 +16,9 @@ public class WriterServiceImp implements WriterService {
 
     @Autowired
     private WriterDAO writerDao;
-    
+
     @Transactional
     public Writer getWriter(String link) {
         return writerDao.getWriter(link);
     }
-
 }
