@@ -21,7 +21,12 @@
                             <img src="${pop.comics_cover_url }" height="150px" />
                         </div>
                         <div class="comics_desc">
-                            <p><b>Писатель:</b> ${pop.comics_writer }</p>
+                            <%-- <p><b>Писатель:</b> ${pop.writers.writer_name }</p> --%>
+                            <p><b>Писатель:</b>
+                            <c:forEach items="${pop.writers }" var="opo">
+                                ${opo.writer_name }
+                            </c:forEach>
+                            </p>
                             <p><b>Художник:</b> ${pop.comics_painter }</p>
                             <c:if test="${!empty pop.comics_colorist }">
                                 <p><b>Колорист:</b> ${pop.comics_colorist }</p>

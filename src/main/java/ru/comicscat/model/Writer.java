@@ -48,6 +48,7 @@ public class Writer {
 //            @JoinColumn(name = "comics_id", nullable = false, updatable = false) }, 
 //            inverseJoinColumns = { @JoinColumn(name = "writer_id", 
 //                    nullable = false, updatable = false) })
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "writers")
     private Set<Comics> listComics = new HashSet<Comics>(0);
 
 
@@ -107,7 +108,7 @@ public class Writer {
         this.writer_nationality = writer_nationality;
     }
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "writers")
+    
     public Set<Comics> getListComics() {
         return listComics;
     }

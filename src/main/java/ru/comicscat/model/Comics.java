@@ -58,15 +58,15 @@ public class Comics {
     
     
     
-    
-    private Set<Writer> writers = new HashSet<Writer>(0);
-    
-    
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "comics_writer", catalog = "comicscat", joinColumns = { 
             @JoinColumn(name = "comics_id", nullable = false, updatable = false) }, 
             inverseJoinColumns = { @JoinColumn(name = "writer_id", 
                     nullable = false, updatable = false) })
+    private Set<Writer> writers = new HashSet<Writer>(0);
+    
+    
+    
     public Set<Writer> getWriters() {
         return writers;
     }
