@@ -1,11 +1,18 @@
 package ru.comicscat.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -20,9 +27,9 @@ public class Comics {
     }
 
     @Id
-    @Column(name = "id")
+    @Column(name = "comics_id")
     @GeneratedValue
-    private Integer id;
+    private Integer comics_id;
 
     @Column(name = "comics_date_added")
     private Date comics_date_added;
@@ -44,9 +51,6 @@ public class Comics {
 
     @Column(name = "comics_cover_url")
     private String comics_cover_url;
-
-    @Column(name = "comics_writer")
-    private String comics_writer;
 
     @Column(name = "comics_painter")
     private String comics_painter;
@@ -78,18 +82,25 @@ public class Comics {
     @Column(name = "comics_publisher_ru")
     private String comics_publisher_ru;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "comics_writer", catalog = "comicscat", joinColumns = { 
+            @JoinColumn(name = "comics_id", nullable = false, updatable = false) }, 
+            inverseJoinColumns = { @JoinColumn(name = "writer_id", 
+                    nullable = false, updatable = false) })
+    private Set<Writer> writers = new HashSet<Writer>(0);
+
     /**
      * @return the id
      */
     public Integer getId() {
-        return id;
+        return comics_id;
     }
 
     /**
      * @param id the id to set
      */
     public void setId(Integer id) {
-        this.id = id;
+        this.comics_id = id;
     }
 
     /**
@@ -188,20 +199,6 @@ public class Comics {
      */
     public void setComics_cover_url(String comics_cover_url) {
         this.comics_cover_url = comics_cover_url;
-    }
-
-    /**
-     * @return the comics_writer
-     */
-    public String getComics_writer() {
-        return comics_writer;
-    }
-
-    /**
-     * @param comics_writer the comics_writer to set
-     */
-    public void setComics_writer(String comics_writer) {
-        this.comics_writer = comics_writer;
     }
 
     /**
@@ -342,5 +339,13 @@ public class Comics {
      */
     public void setComics_publisher_ru(String comics_publisher_ru) {
         this.comics_publisher_ru = comics_publisher_ru;
+    }
+
+    public Set<Writer> getWriters() {
+        return writers;
+    }
+
+    public void setWriters(Set<Writer> writers) {
+        this.writers = writers;
     }
 }

@@ -18,6 +18,7 @@ public class ComicsServiceImp implements ComicsService {
 
     @Autowired
     private ComicsDAO comicsDao;
+    
     private Long pages;
 
     @Transactional

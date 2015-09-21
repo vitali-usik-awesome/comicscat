@@ -20,7 +20,11 @@
                             <img src="${comics.comics_cover_url }" height="250px" />
                         </div>
                         <div class="comics_desc">
-                            <p><b>Писатель:</b> ${comics.comics_writer }</p>
+                            <p><b>Писатель:</b>
+                            <c:forEach items="${comics.writers }" var="opo">
+                                <a href="${pageContext.request.contextPath}/writer/${opo.writer_link}">${opo.writer_name }</a>
+                            </c:forEach>
+                            </p>
                             <p><b>Художник:</b> ${comics.comics_painter }</p>
                             <c:if test="${!empty comics.comics_colorist }">
                                 <p><b>Колорист:</b> ${comics.comics_colorist }</p>
@@ -33,6 +37,12 @@
                     <p>${comics.comics_description}</p>
                     <p><b>Обзоры:</b></p>
                     <iframe width="448" height="252" src="${comics.comics_videos }" frameborder="0" allowfullscreen></iframe>
+                    <p>Similar comics</p>
+                    <c:forEach items="${comics.writers }" var="opo">
+                        <c:forEach items="${opo.listComics }" var="comics">
+                            <p>${comics.comics_title }</p>
+                        </c:forEach>
+                    </c:forEach>
                 </div>
         </c:if>
     </div>
