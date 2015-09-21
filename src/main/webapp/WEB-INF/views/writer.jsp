@@ -12,9 +12,20 @@
         <div class="wrapper">
         <h1><a href="${pageContext.request.contextPath}">Hello, World! Comicscat is here!</a></h1>
         <c:if test="${!empty writer }">
-            <p>${writer.writer_name }</p>
-            <p>${writer.writer_bio }</p>
-            <p>${writer.writer_nationality }</p>
+            
+            <div class="comics_desc_wrapper">
+                <div class="comics_img">
+                    <img src="${writer.writer_photo }" height="150px" />
+                </div>
+                <div class="comics_desc">
+                    <p><b>${writer.writer_name }</b></p>
+                    <p>${writer.writer_bio }</p>
+                    <p>${writer.writer_nationality }</p>
+                </div>
+            </div>
+                    
+                    
+            
             <c:forEach items="${writer.listComics }" var="pop">
                 <div class="comics_item">
                     <h3><a href="${pageContext.request.contextPath}/comics/${pop.comics_link}">${pop.comics_title }</a></h3>

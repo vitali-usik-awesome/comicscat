@@ -40,6 +40,9 @@ public class Writer {
     @Column(name = "writer_bio")
     private String writer_bio;
 
+    @Column(name = "writer_photo")
+    private String writer_photo;
+
     @Column(name = "writer_nationality")
     private String writer_nationality;
 
@@ -86,6 +89,20 @@ public class Writer {
      */
     public void setWriter_bio(String writer_bio) {
         this.writer_bio = writer_bio;
+    }
+
+    /**
+     * @return the writer_photo
+     */
+    public String getWriter_photo() {
+        return writer_photo;
+    }
+
+    /**
+     * @param writer_photo the writer_photo to set
+     */
+    public void setWriter_photo(String writer_photo) {
+        this.writer_photo = writer_photo;
     }
 
     /**
