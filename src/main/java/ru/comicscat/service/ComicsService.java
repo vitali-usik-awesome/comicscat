@@ -9,7 +9,7 @@ import ru.comicscat.model.Comics;
  *
  */
 public interface ComicsService {
-    final static Integer COMICS_PER_PAGE = 2;
+    final static Integer COMICS_PER_PAGE = 3;
     public List<Comics> listComics(int page);
     public Long getPages();
     public Comics getComics(String link);

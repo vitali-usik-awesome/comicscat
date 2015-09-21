@@ -30,7 +30,7 @@ public class Writer {
     @Column(name = "writer_id")
     @GeneratedValue
     private Integer writer_id;
-    
+
     @Column(name = "writer_link")
     private String writer_link;
 

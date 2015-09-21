@@ -23,9 +23,6 @@
                     <p>${writer.writer_nationality }</p>
                 </div>
             </div>
-                    
-                    
-            
             <c:forEach items="${writer.listComics }" var="pop">
                 <div class="comics_item">
                     <h3><a href="${pageContext.request.contextPath}/comics/${pop.comics_link}">${pop.comics_title }</a></h3>
@@ -35,7 +32,11 @@
                             <img src="${pop.comics_cover_url }" height="150px" />
                         </div>
                         <div class="comics_desc">
-                            <p><b>Художник:</b> ${pop.comics_painter }</p>
+                            <p><b>Художник:</b>
+                                <c:forEach items="${pop.painters }" var="p">
+                                    <a href="${pageContext.request.contextPath}/painter/${p.painter_link}">${p.painter_name }</a>
+                                </c:forEach>
+                            </p>
                             <c:if test="${!empty pop.comics_colorist }">
                                 <p><b>Колорист:</b> ${pop.comics_colorist }</p>
                             </c:if>

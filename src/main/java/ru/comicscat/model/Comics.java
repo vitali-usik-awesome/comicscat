@@ -51,9 +51,9 @@ public class Comics {
 
     @Column(name = "comics_cover_url")
     private String comics_cover_url;
-
-    @Column(name = "comics_painter")
-    private String comics_painter;
+//
+//    @Column(name = "comics_painter")
+//    private String comics_painter;
 
     @Column(name = "comics_colorist")
     private String comics_colorist;
@@ -89,18 +89,25 @@ public class Comics {
                     nullable = false, updatable = false) })
     private Set<Writer> writers = new HashSet<Writer>(0);
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "comics_painter", catalog = "comicscat", joinColumns = { 
+            @JoinColumn(name = "comics_id", nullable = false, updatable = false) }, 
+            inverseJoinColumns = { @JoinColumn(name = "painter_id", 
+                    nullable = false, updatable = false) })
+    private Set<Painter> painters = new HashSet<Painter>(0);
+
     /**
-     * @return the id
+     * @return the comics_id
      */
-    public Integer getId() {
+    public Integer getComics_id() {
         return comics_id;
     }
 
     /**
-     * @param id the id to set
+     * @param comics_id the comics_id to set
      */
-    public void setId(Integer id) {
-        this.comics_id = id;
+    public void setComics_id(Integer comics_id) {
+        this.comics_id = comics_id;
     }
 
     /**
@@ -200,20 +207,20 @@ public class Comics {
     public void setComics_cover_url(String comics_cover_url) {
         this.comics_cover_url = comics_cover_url;
     }
-
-    /**
-     * @return the comics_painter
-     */
-    public String getComics_painter() {
-        return comics_painter;
-    }
-
-    /**
-     * @param comics_painter the comics_painter to set
-     */
-    public void setComics_painter(String comics_painter) {
-        this.comics_painter = comics_painter;
-    }
+//
+//    /**
+//     * @return the comics_painter
+//     */
+//    public String getComics_painter() {
+//        return comics_painter;
+//    }
+//
+//    /**
+//     * @param comics_painter the comics_painter to set
+//     */
+//    public void setComics_painter(String comics_painter) {
+//        this.comics_painter = comics_painter;
+//    }
 
     /**
      * @return the comics_colorist
@@ -347,5 +354,19 @@ public class Comics {
 
     public void setWriters(Set<Writer> writers) {
         this.writers = writers;
+    }
+
+    /**
+     * @return the painter
+     */
+    public Set<Painter> getPainters() {
+        return painters;
+    }
+
+    /**
+     * @param painter the painter to set
+     */
+    public void setPainters(Set<Painter> painter) {
+        this.painters = painter;
     }
 }

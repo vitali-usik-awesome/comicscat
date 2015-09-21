@@ -53,6 +53,28 @@ INSERT INTO `comics` (`comics_id`, `comics_date_added`, `comics_parent`, `comics
 /*!40000 ALTER TABLE `comics` ENABLE KEYS */;
 
 
+-- Dumping structure for table comicscat.comics_painter
+CREATE TABLE IF NOT EXISTS `comics_painter` (
+  `comics_id` bigint(20) NOT NULL,
+  `painter_id` bigint(20) NOT NULL,
+  KEY `comics_id` (`comics_id`),
+  KEY `painter_id` (`painter_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table comicscat.comics_painter: ~0 rows (approximately)
+DELETE FROM `comics_painter`;
+/*!40000 ALTER TABLE `comics_painter` DISABLE KEYS */;
+INSERT INTO `comics_painter` (`comics_id`, `painter_id`) VALUES
+	(1, 1),
+	(2, 1),
+	(3, 1),
+	(4, 1),
+	(5, 1),
+	(6, 1),
+	(7, 1);
+/*!40000 ALTER TABLE `comics_painter` ENABLE KEYS */;
+
+
 -- Dumping structure for table comicscat.comics_writer
 CREATE TABLE IF NOT EXISTS `comics_writer` (
   `comics_id` bigint(20) NOT NULL,
@@ -61,18 +83,39 @@ CREATE TABLE IF NOT EXISTS `comics_writer` (
   KEY `writer_id` (`writer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table comicscat.comics_writer: ~0 rows (approximately)
+-- Dumping data for table comicscat.comics_writer: ~8 rows (approximately)
 DELETE FROM `comics_writer`;
 /*!40000 ALTER TABLE `comics_writer` DISABLE KEYS */;
 INSERT INTO `comics_writer` (`comics_id`, `writer_id`) VALUES
 	(1, 1),
-	(2, 1),
+	(2, 2),
 	(3, 1),
 	(4, 1),
 	(5, 1),
-	(6, 1),
-	(7, 1);
+	(6, 2),
+	(7, 1),
+	(7, 2);
 /*!40000 ALTER TABLE `comics_writer` ENABLE KEYS */;
+
+
+-- Dumping structure for table comicscat.painter
+CREATE TABLE IF NOT EXISTS `painter` (
+  `painter_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `painter_link` varchar(150) NOT NULL,
+  `painter_name` varchar(150) NOT NULL,
+  `painter_bio` longtext NOT NULL,
+  `painter_photo` varchar(150) NOT NULL,
+  `painter_nationality` varchar(150) NOT NULL,
+  PRIMARY KEY (`painter_id`),
+  UNIQUE KEY `painter_link` (`painter_link`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table comicscat.painter: ~1 rows (approximately)
+DELETE FROM `painter`;
+/*!40000 ALTER TABLE `painter` DISABLE KEYS */;
+INSERT INTO `painter` (`painter_id`, `painter_link`, `painter_name`, `painter_bio`, `painter_photo`, `painter_nationality`) VALUES
+	(1, 'DaveGibbons', 'Дейв Гиббонс', 'Дейв Гиббонс (англ. Dave Gibbons, род. 14 апреля 1949 года) — британский художник комиксов, сценарист, иногда автор шрифтов и инкер. Наиболее известен благодаря сотрудничеству с Аланом Муром в графическом романе Хранители и в книге о Супермене For the Man Who Has Everything. Иллюстрировал антологию 2000 AD, в которую входит научно-фантастический стрип Rogue Trooper. Свою карьеру в комикс-индустрии, Гиббонс начал в 1973 году, работая над серией 2000 AD дя британского издательства IPC. В 1980 году он переехал в США и получил работу в DC Comics, где первое время занимался иллюстрированием текущей серии о Зелёном Фонаре. Первой работой Гиббонса в издательстве стал выпуск Green Lantern #161 (февраль 1983), который он подготовил совместно со сценаристом Тоддом Кейном, а также почти одновременно с этим сюжет «Creeper», который вышел в выпусках Flash #318-319[1] . С выпуска С Green Lantern # 172 (январь 1984), Гиббонс начал работать с Леном Уэйном. После выпуска «Tales of the Green Lantern Corps» и последующего за ним #186 (март 1985), Гиббонс оставил работу над серией, вернувшись к ней позже только один раз, вместе с Аланом Муром в сюжете «Mogo Doesn’t Socialize» в выпуске Green Lantern # 188. В 1986—1896 годах, работы Гиббонса появились на обложке Who’s Who in the DC Universe для DC Comics и The Official Handbook of the Marvel Universe Deluxe Edition для Marvel Comics. В декабре 1986 года, он участвовал в написании Brickman #1 для издательства Harrier Comics, вместе с Кевином О’Нилом. С мая по август 1998 года он занимался иллюстрированием мини-серии The Phantom вместе с Джо Орладно и Питером Дэвидом, а также в маей 1988 году нарисовал выпуски Action Comics #600-601[1]. ', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/DaveGibbons.jpg/250px-DaveGibbons.jpg', 'Великобритания');
+/*!40000 ALTER TABLE `painter` ENABLE KEYS */;
 
 
 -- Dumping structure for table comicscat.writer
@@ -81,16 +124,18 @@ CREATE TABLE IF NOT EXISTS `writer` (
   `writer_link` varchar(150) NOT NULL,
   `writer_name` varchar(150) NOT NULL,
   `writer_bio` longtext NOT NULL,
+  `writer_photo` varchar(150) NOT NULL,
   `writer_nationality` varchar(150) NOT NULL,
   PRIMARY KEY (`writer_id`),
   UNIQUE KEY `writer_link` (`writer_link`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table comicscat.writer: ~1 rows (approximately)
+-- Dumping data for table comicscat.writer: ~2 rows (approximately)
 DELETE FROM `writer`;
 /*!40000 ALTER TABLE `writer` DISABLE KEYS */;
-INSERT INTO `writer` (`writer_id`, `writer_link`, `writer_name`, `writer_bio`, `writer_nationality`) VALUES
-	(1, 'alanMoore', 'Алан Мур', 'Нил Ричард МакКи́ннон Ге́йман (англ. Neil Richard MacKinnon Gaiman; 10 ноября 1960, Портсмут, Великобритания) — известный английский писатель-фантаст, автор графических романов и комиксов, сценариев к фильмам. К самым знаменитым его работам относятся: «Звездная пыль», «Американские боги», «Коралина», «История с кладбищем», серия комиксов «Песочный человек». Гейману присуждены многие награды, включая премию «Хьюго», премию «Небьюла», премию Брэма Стокера, медаль Ньюбери.', 'Великобритания');
+INSERT INTO `writer` (`writer_id`, `writer_link`, `writer_name`, `writer_bio`, `writer_photo`, `writer_nationality`) VALUES
+	(1, 'neil_gaiman', 'Нил Гейман', 'Нил Ричард МакКи́ннон Ге́йман (англ. Neil Richard MacKinnon Gaiman; 10 ноября 1960, Портсмут, Великобритания) — известный английский писатель-фантаст, автор графических романов и комиксов, сценариев к фильмам. К самым знаменитым его работам относятся: «Звездная пыль», «Американские боги», «Коралина», «История с кладбищем», серия комиксов «Песочный человек». Гейману присуждены многие награды, включая премию «Хьюго», премию «Небьюла», премию Брэма Стокера, медаль Ньюбери.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Gaiman,_Neil_(2007).jpg/220px-Gaiman,_Neil_(2007).jpg', 'Великобритания'),
+	(2, 'BryanLeeOMalley', 'Брайан Ли О\'Мэйли', 'Брайан Ли О’Мэлли (англ. Bryan Lee O\'Malley, родился 21 февраля 1979, Лондон (Онтарио), Канада) — канадский карикатурист. Наиболее известен своей серией комиксов Скотт Пилигрим, а также как музыкант под псевдонимом Kupek. До публикации собственного материала, О’Мэлли иллюстрировал минисерии комиксов Hopeless Savages: Ground Zero издательства Oni Press. Он также отвечал за шрифт во многих комиксах Oni Press, включая большинство работ Чайны Клагстон, в период между 2002 и 2005 годами.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Bryan_Lee_O%27Malley_by_Gage_Skidmore.jpg/800px-Bryan_Lee_O%27Malley_by_Gage_Skidmore.jpg', 'Канада');
 /*!40000 ALTER TABLE `writer` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
