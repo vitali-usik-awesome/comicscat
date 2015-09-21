@@ -21,11 +21,17 @@
                         </div>
                         <div class="comics_desc">
                             <p><b>Писатель:</b>
-                            <c:forEach items="${comics.writers }" var="opo">
-                                <a href="${pageContext.request.contextPath}/writer/${opo.writer_link}">${opo.writer_name }</a>
-                            </c:forEach>
+                                <c:forEach items="${comics.writers }" var="opo">
+                                    <a href="${pageContext.request.contextPath}/writer/${opo.writer_link}">${opo.writer_name }</a>
+                                </c:forEach>
                             </p>
-                            <p><b>Художник:</b> ${comics.comics_painter }</p>
+                            <p><b>Художник:</b>
+                                <c:forEach items="${pop.painters }" var="p">
+                                    <a href="${pageContext.request.contextPath}/painter/${p.painter_link}">${p.painter_name }</a>
+                                </c:forEach>
+                            </p>
+                            
+<%--                             <p><b>Художник:</b> ${pop.comics_painter }</p> --%>
                             <c:if test="${!empty comics.comics_colorist }">
                                 <p><b>Колорист:</b> ${comics.comics_colorist }</p>
                             </c:if>

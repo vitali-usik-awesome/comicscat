@@ -7,5 +7,6 @@
     <session-factory>
         <mapping class="ru.comicscat.model.Comics" />
         <mapping class="ru.comicscat.model.Writer" />
+        <mapping class="ru.comicscat.model.Painter" />
     </session-factory>
 </hibernate-configuration>
