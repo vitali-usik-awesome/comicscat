@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -51,9 +52,6 @@ public class Comics {
 
     @Column(name = "comics_cover_url")
     private String comics_cover_url;
-//
-//    @Column(name = "comics_painter")
-//    private String comics_painter;
 
     @Column(name = "comics_colorist")
     private String comics_colorist;
@@ -76,8 +74,9 @@ public class Comics {
     @Column(name = "comics_date_world_pub")
     private Date comics_date_world_pub;
 
-    @Column(name = "comics_publisher_origin")
-    private String comics_publisher_origin;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "comics_publisher_id", nullable = false)
+    private Publisher publisher;
 
     @Column(name = "comics_publisher_ru")
     private String comics_publisher_ru;
@@ -207,20 +206,6 @@ public class Comics {
     public void setComics_cover_url(String comics_cover_url) {
         this.comics_cover_url = comics_cover_url;
     }
-//
-//    /**
-//     * @return the comics_painter
-//     */
-//    public String getComics_painter() {
-//        return comics_painter;
-//    }
-//
-//    /**
-//     * @param comics_painter the comics_painter to set
-//     */
-//    public void setComics_painter(String comics_painter) {
-//        this.comics_painter = comics_painter;
-//    }
 
     /**
      * @return the comics_colorist
@@ -321,17 +306,17 @@ public class Comics {
     }
 
     /**
-     * @return the comics_publisher_origin
+     * @return the publisher
      */
-    public String getComics_publisher_origin() {
-        return comics_publisher_origin;
+    public Publisher getPublisher() {
+        return publisher;
     }
 
     /**
-     * @param comics_publisher_origin the comics_publisher_origin to set
+     * @param publisher the publisher to set
      */
-    public void setComics_publisher_origin(String comics_publisher_origin) {
-        this.comics_publisher_origin = comics_publisher_origin;
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
     /**
