@@ -9,5 +9,6 @@
         <mapping class="ru.comicscat.model.Writer" />
         <mapping class="ru.comicscat.model.Painter" />
         <mapping class="ru.comicscat.model.Publisher" />
+        <mapping class="ru.comicscat.model.LocalPublisher" />
     </session-factory>
 </hibernate-configuration>

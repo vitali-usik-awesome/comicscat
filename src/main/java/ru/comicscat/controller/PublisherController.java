@@ -28,4 +28,10 @@ public class PublisherController {
         map.put("pub", publisherService.getPublisher(link));
         return "pub_page";
     }
+
+    @RequestMapping("/localpub/{link}")
+    public String localPubPage(@PathVariable("link") String link, Map<String, Object> map) {
+        map.put("localPub", publisherService.getLocalPublisher(link));
+        return "local_pub_page";
+    }
 }
