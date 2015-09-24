@@ -11,19 +11,20 @@
     <body>
         <div class="wrapper">
         <h1><a href="${pageContext.request.contextPath}">Hello, World! Comicscat is here!</a></h1>
-        <c:if test="${!empty painter }">
+        <c:if test="${!empty localPub }">
             
             <div class="comics_desc_wrapper">
                 <div class="comics_img">
-                    <img src="${painter.painter_photo }" height="150px" />
+                    <img src="${localPub.lpub_logo_url }" height="150px" />
                 </div>
                 <div class="comics_desc">
-                    <p><b>${painter.painter_name }</b></p>
-                    <p>${painter.painter_bio }</p>
-                    <p>${painter.painter_nationality }</p>
+                    <p><b>${localPub.lpub_name }</b></p>
+                    <p>${localPub.lpub_country }</p>
+                    <p>${localPub.lpub_site }</p>
+                    <p>${localPub.lpub_desc }</p>
                 </div>
             </div>
-            <c:forEach items="${painter.listComics }" var="pop">
+            <c:forEach items="${localPub.comicsSet }" var="pop">
                 <div class="comics_item">
                     <h3><a href="${pageContext.request.contextPath}/comics/${pop.comics_link}">${pop.comics_title }</a></h3>
                     <h4><a href="${pageContext.request.contextPath}/comics/${pop.comics_link}">${pop.comics_title_origin }</a></h4>
@@ -33,21 +34,20 @@
                         </div>
                         <div class="comics_desc">
                             <p><b>Художник:</b>
-                                <c:forEach items="${pop.writers }" var="opo">
-                                    <a href="${pageContext.request.contextPath}/writer/${opo.writer_link}">${opo.writer_name }</a>
+                                <c:forEach items="${pop.painters }" var="p">
+                                    <a href="${pageContext.request.contextPath}/painter/${p.painter_link}">${p.painter_name }</a>
                                 </c:forEach>
                             </p>
                             <c:if test="${!empty pop.comics_colorist }">
                                 <p><b>Колорист:</b> ${pop.comics_colorist }</p>
                             </c:if>
                             <p><b>Тип:</b> ${pop.comics_type }</p>
-                            <p><b>Издатель:</b> <a href="${pageContext.request.contextPath}/pub/${pop.publisher.pub_link}">${pop.publisher.pub_name }</a> <b>Издатель локализации:</b> <a href="${pageContext.request.contextPath}/localpub/${pop.localpublisher.lpub_link}">${pop.localpublisher.lpub_name }</a></p>
+                            <p><b>Издатель:</b> <a href="${pageContext.request.contextPath}/pub/${pop.publisher.pub_link}">${pop.publisher.pub_name }</a></p>
                             <p><b>Год выхода:</b> ${pop.comics_date_world_pub } <b>Год локализации:</b> ${pop.comics_date_ru_pub }</p>
                         </div>
                     </div>
                     <p>${pop.comics_description}</p>
                     <p></p>
-                    
                 </div>
             </c:forEach>
         </c:if>

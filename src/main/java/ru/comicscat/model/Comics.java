@@ -78,8 +78,9 @@ public class Comics {
     @JoinColumn(name = "comics_publisher_id", nullable = false)
     private Publisher publisher;
 
-    @Column(name = "comics_publisher_ru")
-    private String comics_publisher_ru;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "comics_localpublisher_id", nullable = false)
+    private LocalPublisher localpublisher;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "comics_writer", catalog = "comicscat", joinColumns = { 
@@ -320,17 +321,17 @@ public class Comics {
     }
 
     /**
-     * @return the comics_publisher_ru
+     * @return the localpublisher
      */
-    public String getComics_publisher_ru() {
-        return comics_publisher_ru;
+    public LocalPublisher getLocalpublisher() {
+        return localpublisher;
     }
 
     /**
-     * @param comics_publisher_ru the comics_publisher_ru to set
+     * @param localpublisher the localpublisher to set
      */
-    public void setComics_publisher_ru(String comics_publisher_ru) {
-        this.comics_publisher_ru = comics_publisher_ru;
+    public void setLocalpublisher(LocalPublisher localpublisher) {
+        this.localpublisher = localpublisher;
     }
 
     public Set<Writer> getWriters() {

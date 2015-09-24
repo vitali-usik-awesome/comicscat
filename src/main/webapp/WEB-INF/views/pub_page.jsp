@@ -42,13 +42,11 @@
                                 <p><b>Колорист:</b> ${pop.comics_colorist }</p>
                             </c:if>
                             <p><b>Тип:</b> ${pop.comics_type }</p>
-                            <p><b>Издатель локализации:</b> ${pop.comics_publisher_ru }</p>
+                            <p><b>Издатель локализации:</b> <a href="${pageContext.request.contextPath}/localpub/${pop.localpublisher.lpub_link}">${pop.localpublisher.lpub_name }</a></p>
                             <p><b>Год выхода:</b> ${pop.comics_date_world_pub } <b>Год локализации:</b> ${pop.comics_date_ru_pub }</p>
                         </div>
                     </div>
                     <p>${pop.comics_description}</p>
-                    <p></p>
-                    
                 </div>
             </c:forEach>
         </c:if>

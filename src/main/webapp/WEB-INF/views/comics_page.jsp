@@ -34,7 +34,7 @@
                                 <p><b>Колорист:</b> ${comics.comics_colorist }</p>
                             </c:if>
                             <p><b>Тип:</b> ${comics.comics_type }</p>
-                            <p><b>Издатель:</b> <a href="${pageContext.request.contextPath}/pub/${comics.publisher.pub_link}">${comics.publisher.pub_name }</a> <b>Издатель локализации:</b> ${comics.comics_publisher_ru }</p>
+                            <p><b>Издатель:</b> <a href="${pageContext.request.contextPath}/pub/${comics.publisher.pub_link}">${comics.publisher.pub_name }</a> <b>Издатель локализации:</b> <a href="${pageContext.request.contextPath}/localpub/${comics.localpublisher.lpub_link}">${comics.localpublisher.lpub_name }</a></p>
                             <p><b>Год выхода:</b> ${comics.comics_date_world_pub } <b>Год локализации:</b> ${comics.comics_date_ru_pub }</p>
                         </div>
                     </div>
