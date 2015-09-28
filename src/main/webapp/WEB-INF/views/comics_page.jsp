@@ -36,12 +36,16 @@
                             <p><b>Тип:</b> ${comics.comics_type }</p>
                             <p><b>Издатель:</b> <a href="${pageContext.request.contextPath}/pub/${comics.publisher.pub_link}">${comics.publisher.pub_name }</a> <b>Издатель локализации:</b> <a href="${pageContext.request.contextPath}/localpub/${comics.localpublisher.lpub_link}">${comics.localpublisher.lpub_name }</a></p>
                             <p><b>Год выхода:</b> ${comics.comics_date_world_pub } <b>Год локализации:</b> ${comics.comics_date_ru_pub }</p>
+                            <p>${comics.comics_format }/ ${comics.comics_num_pages } страниц</p>
+                            <p><b>Переплет: </b>${comics.comics_binding }</p>
+                            <p><b>ISBN: </b>${comics.comics_isbn }</p>
+                            <p><b>Тираж: </b>${comics.comics_numCopies } копий, <b>Вес: </b>${comics.comics_weight } грамм</p>
                         </div>
                     </div>
                     <p>${comics.comics_description}</p>
                     <p><b>Обзоры:</b></p>
                     <iframe width="448" height="252" src="${comics.comics_videos }" frameborder="0" allowfullscreen></iframe>
-                    <p>Similar comics</p>
+                    <p><b>Similar comics</b></p>
                     <c:forEach items="${comics.writers }" var="opo">
                         <c:forEach items="${opo.listComics }" var="comics">
                             <p>${comics.comics_title }</p>
