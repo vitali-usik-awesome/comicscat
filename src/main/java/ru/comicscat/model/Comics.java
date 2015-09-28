@@ -96,6 +96,24 @@ public class Comics {
                     nullable = false, updatable = false) })
     private Set<Painter> painters = new HashSet<Painter>(0);
 
+    @Column(name = "comics_format")
+    private String comics_format;
+
+    @Column(name = "comics_num_pages")
+    private Integer comics_num_pages;
+
+    @Column(name = "comics_binding")
+    private String comics_binding;
+
+    @Column(name = "comics_isbn")
+    private String comics_isbn;
+
+    @Column(name = "comics_numCopies")
+    private Integer comics_numCopies;
+
+    @Column(name = "comics_weight")
+    private Integer comics_weight;
+
     /**
      * @return the comics_id
      */
@@ -354,5 +372,89 @@ public class Comics {
      */
     public void setPainters(Set<Painter> painter) {
         this.painters = painter;
+    }
+
+    /**
+     * @return the comics_format
+     */
+    public String getComics_format() {
+        return comics_format;
+    }
+
+    /**
+     * @param comics_format the comics_format to set
+     */
+    public void setComics_format(String comics_format) {
+        this.comics_format = comics_format;
+    }
+
+    /**
+     * @return the comics_num_pages
+     */
+    public Integer getComics_num_pages() {
+        return comics_num_pages;
+    }
+
+    /**
+     * @param comics_num_pages the comics_num_pages to set
+     */
+    public void setComics_num_pages(Integer comics_num_pages) {
+        this.comics_num_pages = comics_num_pages;
+    }
+
+    /**
+     * @return the comics_binding
+     */
+    public String getComics_binding() {
+        return comics_binding;
+    }
+
+    /**
+     * @param comics_binding the comics_binding to set
+     */
+    public void setComics_binding(String comics_binding) {
+        this.comics_binding = comics_binding;
+    }
+
+    /**
+     * @return the comics_isbn
+     */
+    public String getComics_isbn() {
+        return comics_isbn;
+    }
+
+    /**
+     * @param comics_isbn the comics_isbn to set
+     */
+    public void setComics_isbn(String comics_isbn) {
+        this.comics_isbn = comics_isbn;
+    }
+
+    /**
+     * @return the comics_numCopies
+     */
+    public Integer getComics_numCopies() {
+        return comics_numCopies;
+    }
+
+    /**
+     * @param comics_numCopies the comics_numCopies to set
+     */
+    public void setComics_numCopies(Integer comics_numCopies) {
+        this.comics_numCopies = comics_numCopies;
+    }
+
+    /**
+     * @return the comics_weight
+     */
+    public Integer getComics_weight() {
+        return comics_weight;
+    }
+
+    /**
+     * @param comics_weight the comics_weight to set
+     */
+    public void setComics_weight(Integer comics_weight) {
+        this.comics_weight = comics_weight;
     }
 }
