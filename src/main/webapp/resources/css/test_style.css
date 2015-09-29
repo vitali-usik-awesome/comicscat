@@ -24,8 +24,16 @@ body {background: #fff;}
 .comics_desc_wrapper .comics_img img {margin: 0 20px;}
 .comics_desc_wrapper .comics_desc {display: block; position: relative; float: left; width: 1050px;}
 
+/* comics_page */
 .comics_page {margin: 20px 0;}
 .comics_page_wrapper {overflow: hidden;}
 .comics_page_wrapper .comics_img {display: block; position: relative; float: left; width: 300px;}
 .comics_page_wrapper .comics_img img {margin: 0 20px;}
 .comics_page_wrapper .comics_desc {display: block; position: relative; float: left; width: 900px;}
+
+/* pubs_page */
+.pubs_page {margin: 20px 0;}
+.pubs_page_wrapper {overflow: hidden;}
+.pubs_page_wrapper .pub_img {display: block; position: relative; float: left; width: 300px;}
+.pubs_page_wrapper .pub_img img {margin: 0 10px; min-height: 100px; max-height: 250px; max-width: 280px;}
+.pubs_page_wrapper .pubs_desc {display: block; position: relative; float: left; width: 900px;}

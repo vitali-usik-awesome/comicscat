@@ -48,8 +48,26 @@ public class LocalPublisher {
     @Column(name = "lpub_country")
     private String lpub_country;
 
+    @Column(name = "lpub_city")
+    private String lpub_city;
+
     @Column(name = "lpub_site")
     private String lpub_site;
+
+    @Column(name = "lpub_vk")
+    private String lpub_vk;
+
+    @Column(name = "lpub_mail_pr")
+    private String lpub_mail_pr;
+
+    @Column(name = "lpub_mail_sales")
+    private String lpub_mail_sales;
+
+    @Column(name = "lpub_address")
+    private String lpub_address;
+
+    @Column(name = "lpub_phone")
+    private String lpub_phone;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "localpublisher")
     private Set<Comics> comicsSet = new HashSet<Comics>(0);
@@ -167,6 +185,20 @@ public class LocalPublisher {
     }
 
     /**
+     * @return the lpub_city
+     */
+    public String getLpub_city() {
+        return lpub_city;
+    }
+
+    /**
+     * @param lpub_city the lpub_city to set
+     */
+    public void setLpub_city(String lpub_city) {
+        this.lpub_city = lpub_city;
+    }
+
+    /**
      * @return the lpub_site
      */
     public String getLpub_site() {
@@ -178,6 +210,76 @@ public class LocalPublisher {
      */
     public void setLpub_site(String lpub_site) {
         this.lpub_site = lpub_site;
+    }
+
+    /**
+     * @return the lpub_vk
+     */
+    public String getLpub_vk() {
+        return lpub_vk;
+    }
+
+    /**
+     * @param lpub_vk the lpub_vk to set
+     */
+    public void setLpub_vk(String lpub_vk) {
+        this.lpub_vk = lpub_vk;
+    }
+
+    /**
+     * @return the lpub_mail_pr
+     */
+    public String getLpub_mail_pr() {
+        return lpub_mail_pr;
+    }
+
+    /**
+     * @param lpub_mail_pr the lpub_mail_pr to set
+     */
+    public void setLpub_mail_pr(String lpub_mail_pr) {
+        this.lpub_mail_pr = lpub_mail_pr;
+    }
+
+    /**
+     * @return the lpub_mail_sales
+     */
+    public String getLpub_mail_sales() {
+        return lpub_mail_sales;
+    }
+
+    /**
+     * @param lpub_mail_sales the lpub_mail_sales to set
+     */
+    public void setLpub_mail_sales(String lpub_mail_sales) {
+        this.lpub_mail_sales = lpub_mail_sales;
+    }
+
+    /**
+     * @return the lpub_address
+     */
+    public String getLpub_address() {
+        return lpub_address;
+    }
+
+    /**
+     * @param lpub_address the lpub_address to set
+     */
+    public void setLpub_address(String lpub_address) {
+        this.lpub_address = lpub_address;
+    }
+
+    /**
+     * @return the lpub_phone
+     */
+    public String getLpub_phone() {
+        return lpub_phone;
+    }
+
+    /**
+     * @param lpub_phone the lpub_phone to set
+     */
+    public void setLpub_phone(String lpub_phone) {
+        this.lpub_phone = lpub_phone;
     }
 
     /**

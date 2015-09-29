@@ -21,7 +21,8 @@ public class ComicsDAO {
 
     @SuppressWarnings("unchecked")
     public List<Comics> listComics(int firstResult, int comics_per_page) {
-        return sessionFactory.getCurrentSession().createQuery("FROM Comics WHERE comics_status = 'pub' ORDER BY comics_date_added DESC").setFirstResult(firstResult).setMaxResults(comics_per_page).list();
+        return sessionFactory.getCurrentSession().createQuery("FROM Comics WHERE comics_status = 'pub' ORDER BY comics_date_added DESC")
+                .setFirstResult(firstResult).setMaxResults(comics_per_page).list();
     }
 
     public Long getPages() {
