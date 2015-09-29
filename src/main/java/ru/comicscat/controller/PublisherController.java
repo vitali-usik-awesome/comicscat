@@ -34,4 +34,10 @@ public class PublisherController {
         map.put("localPub", publisherService.getLocalPublisher(link));
         return "local_pub_page";
     }
+
+    @RequestMapping("/admin/localpubs")
+    public String localPubsPage(Map<String, Object> map) {
+        map.put("pub", publisherService.listLocalPubs());
+        return "pubsPage";
+    }
 }

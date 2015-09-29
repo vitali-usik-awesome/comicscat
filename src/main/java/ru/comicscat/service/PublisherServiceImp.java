@@ -1,5 +1,7 @@
 package ru.comicscat.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,5 +28,10 @@ public class PublisherServiceImp implements PublisherService {
     @Transactional
     public LocalPublisher getLocalPublisher(String link) {
         return publisherDao.getLocalPublisher(link);
+    }
+
+    @Transactional
+    public List<LocalPublisher> listLocalPubs() {
+        return publisherDao.listLocalPubs();
     }
 }

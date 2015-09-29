@@ -16,6 +16,14 @@ body {background: #fff;}
 .wrapper h1 a:hover {text-decoration: underline;}
 .wrapper h1 a:active {color: blue;}
 
+/* header */
+header {width: 100%; margin-bottom: 20px;}
+    header ul {margin: 0 auto; width: 100%;}
+    header li {display: inline-block; margin-right: 10px;}
+    header a {color: #000; display: inline-block; text-align: center; text-decoration: none;}
+    header li a {box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+    header a:hover, nav a:active {background-color: #c2c2c2;}
+
 /* comics_wrapper */
 .comics_item {margin-top: 20px;}
 .comics_item:nth-child(even) {background-color: #98FB98;}
@@ -24,8 +32,16 @@ body {background: #fff;}
 .comics_desc_wrapper .comics_img img {margin: 0 20px;}
 .comics_desc_wrapper .comics_desc {display: block; position: relative; float: left; width: 1050px;}
 
+/* comics_page */
 .comics_page {margin: 20px 0;}
 .comics_page_wrapper {overflow: hidden;}
 .comics_page_wrapper .comics_img {display: block; position: relative; float: left; width: 300px;}
 .comics_page_wrapper .comics_img img {margin: 0 20px;}
 .comics_page_wrapper .comics_desc {display: block; position: relative; float: left; width: 900px;}
+
+/* pubs_page */
+.pubs_page {margin: 20px 0;}
+.pubs_page_wrapper {overflow: hidden;}
+.pubs_page_wrapper .pub_img {display: block; position: relative; float: left; width: 300px;}
+.pubs_page_wrapper .pub_img img {margin: 0 10px; min-height: 100px; max-height: 250px; max-width: 280px;}
+.pubs_page_wrapper .pubs_desc {display: block; position: relative; float: left; width: 900px;}

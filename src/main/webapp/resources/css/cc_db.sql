@@ -114,16 +114,23 @@ CREATE TABLE IF NOT EXISTS `localpublisher` (
   `lpub_status` varchar(150) NOT NULL,
   `lpub_founded` varchar(150) NOT NULL,
   `lpub_country` varchar(150) NOT NULL,
+  `lpub_city` varchar(150) NOT NULL,
   `lpub_site` varchar(150) NOT NULL,
+  `lpub_vk` varchar(150) NOT NULL,
+  `lpub_mail_pr` varchar(150) NOT NULL,
+  `lpub_mail_sales` varchar(150) NOT NULL,
+  `lpub_address` varchar(150) NOT NULL,
+  `lpub_phone` varchar(150) NOT NULL,
   PRIMARY KEY (`lpub_id`),
   UNIQUE KEY `lpub_link` (`lpub_link`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table comicscat.localpublisher: ~1 rows (approximately)
+-- Dumping data for table comicscat.localpublisher: ~2 rows (approximately)
 DELETE FROM `localpublisher`;
 /*!40000 ALTER TABLE `localpublisher` DISABLE KEYS */;
-INSERT INTO `localpublisher` (`lpub_id`, `lpub_link`, `lpub_name`, `lpub_logo_url`, `lpub_desc`, `lpub_status`, `lpub_founded`, `lpub_country`, `lpub_site`) VALUES
-	(1, 'komilfo', 'Комильфо', 'http://img3.whoiswho.dp.ru/wiwpictures/0eb06536-ace5-45e2-b6e0-362e40b98d6b.jpg', 'Мы издаём необычные, веселые и красочные книги, делаем это профессионально и любим своё дело. Но к сожалению, финансовые возможности издательства ограничены и потому мы частенько издаём не менее качественные и красивые книги на средства авторов. При этом у нас довольно низкие расценки на все услуги. А ещё мы оказываем помощь в распространении тиражей. Наши книги продаются в магазинах Москвы и Петербурга, иногда в других регионах России, в интернет-магазинах, среди которых OZON, Лабиринт, Буквоед, Biblion и другие.', 'active', '2010', 'РФ', 'http://komilfobook.ru/');
+INSERT INTO `localpublisher` (`lpub_id`, `lpub_link`, `lpub_name`, `lpub_logo_url`, `lpub_desc`, `lpub_status`, `lpub_founded`, `lpub_country`, `lpub_city`, `lpub_site`, `lpub_vk`, `lpub_mail_pr`, `lpub_mail_sales`, `lpub_address`, `lpub_phone`) VALUES
+	(1, 'komilfo', 'Комильфо', 'http://img3.whoiswho.dp.ru/wiwpictures/0eb06536-ace5-45e2-b6e0-362e40b98d6b.jpg', 'Мы издаём необычные, веселые и красочные книги, делаем это профессионально и любим своё дело. Но к сожалению, финансовые возможности издательства ограничены и потому мы частенько издаём не менее качественные и красивые книги на средства авторов. При этом у нас довольно низкие расценки на все услуги. А ещё мы оказываем помощь в распространении тиражей. Наши книги продаются в магазинах Москвы и Петербурга, иногда в других регионах России, в интернет-магазинах, среди которых OZON, Лабиринт, Буквоед, Biblion и другие.', 'active', '2010', 'РФ', 'Санкт-Петербург', 'http://komilfobook.ru/', 'https://vk.com/komilfobook', 'komilfobook@mail.ru', 'komilfobook@mail.ru', '119334, г. Москва, 5-й Донской проезд, д. 15, стр. 4', '(495) 933-76-00'),
+	(2, 'azbuka', 'Азбука', 'https://upload.wikimedia.org/wikipedia/ru/6/61/Azbooka_Publishers_logotype.gif', 'Комиксами в Азбуке занимаются… сотрудники Комикс-Арта. Того самого, который готовил «Сэндмена»,«Тетрадь смерти», «Наруто», «Блич» «One piece. Большой куш» и многое другое, к примеру, для «Эксмо». Но если с «Эксмо» мы сотрудничали как удаленный подрядчик, то в «Азбуку» мы влились на правах штатных сотрудников. ', 'active', '2009', 'РФ', 'Санкт-Петербург ', 'http://azbooka.ru/ ', 'https://vk.com/azbooka_graphic_novels', 'pr@atticus-group.ru', 'komilfobook@mail.ru', '119334, г. Москва, 5-й Донской проезд, д. 15, стр. 4', '(495) 933-76-00');
 /*!40000 ALTER TABLE `localpublisher` ENABLE KEYS */;
 
 
