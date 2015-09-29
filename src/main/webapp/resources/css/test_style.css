@@ -16,6 +16,14 @@ body {background: #fff;}
 .wrapper h1 a:hover {text-decoration: underline;}
 .wrapper h1 a:active {color: blue;}
 
+/* header */
+header {width: 100%; margin-bottom: 20px;}
+    header ul {margin: 0 auto; width: 100%;}
+    header li {display: inline-block; margin-right: 10px;}
+    header a {color: #000; display: inline-block; text-align: center; text-decoration: none;}
+    header li a {box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+    header a:hover, nav a:active {background-color: #c2c2c2;}
+
 /* comics_wrapper */
 .comics_item {margin-top: 20px;}
 .comics_item:nth-child(even) {background-color: #98FB98;}

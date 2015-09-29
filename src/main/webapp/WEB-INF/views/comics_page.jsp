@@ -10,7 +10,9 @@
     </head>
     <body>
         <div class="wrapper">
-        <h1><a href="${pageContext.request.contextPath}">Hello, World! Comicscat is here!</a></h1>
+        <!-- header -->
+        <%@ include file="jspf/header.jspf" %>  
+        <!-- /header -->
         <c:if test="${!empty comics}">
                 <div class="comics_page">
                     <h3>${comics.comics_title }</h3>
