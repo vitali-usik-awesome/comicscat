@@ -114,6 +114,10 @@ public class Comics {
     @Column(name = "comics_weight")
     private Integer comics_weight;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "comics_added_by", nullable = false)
+    private LocalPublisher comics_added_by;
+
     /**
      * @return the comics_id
      */
@@ -456,5 +460,19 @@ public class Comics {
      */
     public void setComics_weight(Integer comics_weight) {
         this.comics_weight = comics_weight;
+    }
+
+    /**
+     * @return the comics_added_by
+     */
+    public LocalPublisher getComics_added_by() {
+        return comics_added_by;
+    }
+
+    /**
+     * @param comics_added_by the comics_added_by to set
+     */
+    public void setComics_added_by(LocalPublisher comics_added_by) {
+        this.comics_added_by = comics_added_by;
     }
 }
