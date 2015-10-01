@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 /**
  * @author Vitali Usik
@@ -39,7 +40,8 @@ public class User {
 
     @Column(name = "user_surname")
     private String user_surname;
-
+//Invalid escape sequence (valid ones are \b \t \n \f \r \" \' \\ )
+    @Pattern(regexp="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", message="Invalid email address.")
     @Column(name = "user_mail")
     private String user_mail;
 
