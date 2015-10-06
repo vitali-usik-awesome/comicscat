@@ -1,5 +1,7 @@
 package ru.comicscat.service;
 
-public interface UserService {
+import ru.comicscat.model.User;
 
+public interface UserService {
+    public void saveProfile(User user);
 }
