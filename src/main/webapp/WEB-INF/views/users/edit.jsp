@@ -28,6 +28,7 @@
                             <td>
                                 <sform:input path="user_login" size="15" maxlength="15" id="user_login"/>
                                 <small id="login_msg">No spaces, please. Only english letters please!</small>
+                                <sform:errors path="user_login" cssClass="error" />
                             </td>
                         </tr>
                         <tr>
@@ -35,18 +36,21 @@
                             <td>
                                 <sform:input path="user_pass" size="30" showPassword="true" id="user_pass"/>
                                 <small id="pass_msg">5 characters or more</small>
+                                <sform:errors path="user_pass" cssClass="error" />
                             </td>
                         </tr>
                         <tr>
                             <td><label for="user_name">Name: </label></td>
                             <td>
                                 <sform:input path="user_name" size="30" id="user_name"/>
+                                <sform:errors path="user_name" cssClass="error" />
                             </td>
                         </tr>
                         <tr>
                             <td><label for="user_surname">Surname: </label></td>
                             <td>
                                 <sform:input path="user_surname" size="30" id="user_surname"/>
+                                <sform:errors path="user_surname" cssClass="error" />
                             </td>
                         </tr>
                         <tr>
@@ -74,7 +78,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input name="commit" type="submit" value="I accept. Create my account." /></td>
+                            <td><input name="commit" type="submit" value="Create new account." /></td>
                         </tr>
                     </table>
                 </fieldset>
